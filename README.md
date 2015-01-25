@@ -6,9 +6,7 @@ Yii2-Config provides a web interface for advanced configuration control and incl
 ## Documentation
 
 [Installation instructions](docs/installation.md)
-
-#### Why feature *X* is missing?
-Because it is not implemented yet or will never be implemented. Check out roadmap.
+[Usage](docs/basic_usage.md)
 
 #### How to contribute?
 
