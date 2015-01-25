@@ -6,6 +6,7 @@ Yii2-Config provides a web interface for advanced configuration control and incl
 ## Documentation
 
 [Installation instructions](docs/installation.md)
+
 [Usage](docs/basic_usage.md)
 
 #### How to contribute?
