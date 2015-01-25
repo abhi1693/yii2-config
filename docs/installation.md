@@ -49,4 +49,6 @@ $config = [
 Step 3: Updating database schema
 --------------------------------
 
-Coming Soon
+```
+yii migrate --migrationPath=@vendor/abhi1693/config/migrations
+```
