@@ -3,6 +3,11 @@ Yii2-Config
 
 Yii2-Config provides a web interface for advanced configuration control and includes following features:
 
+- Get Value from DB
+- Set Value to DB
+- Delete Value from DB
+- Delete All Values from DB
+
 ## Documentation
 
 [Installation instructions](docs/installation.md)
