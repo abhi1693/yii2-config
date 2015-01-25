@@ -4,9 +4,9 @@ namespace abhimanyu\config\components;
 
 use yii\base\Component;
 use yii\base\Exception;
-use Yii;
 use yii\caching\Cache;
 use yii\db\Connection;
+use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 
@@ -77,9 +77,16 @@ class Config extends Component implements IConfig
         if ($this->cacheId !== null) {
             $this->_cache = Yii::$app->get($this->cacheId);
             if (!$this->_cache instanceof Cache) {
-                throw new Exception("Config.cacheId \"{$this->cacheId}\" is invalid.");
+                throw new Exception("Config.db \"{$this->db}\" is invalid.");
             }
         }
+
+        // Get the db component
+        $this->_db = Yii::$app->get($this->db);
+        if (!$this->_db instanceof Connection) {
+            throw new Exception("Config.cacheId \"{$this->cacheId}\" is invalid.");
+        }
+
         parent::init();
     }
 
