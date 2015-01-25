@@ -5,7 +5,6 @@ Getting Started
 ---------------
 
 - [Installation](installation.md)
-- [Configuration](configuration.md)
 
 Usage
 -----
