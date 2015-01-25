@@ -18,8 +18,6 @@ Contributing instructions are located in [CONTRIBUTING.md](CONTRIBUTING.md) file
 
 ## Roadmap
 
-- [ ] Set Key-Value Pairs
-- [ ] Get Key-Value Pairs
 - [ ] Dynamic Database Connection
 - [ ] Documentation
 
