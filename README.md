@@ -14,11 +14,6 @@ Because it is not implemented yet or will never be implemented. Check out roadma
 
 Contributing instructions are located in [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
-## Roadmap
-
-- [ ] Dynamic Database Connection
-- [ ] Documentation
-
 ## License
 
 Yii2-config is released under the MIT License. See the bundled [LICENSE](LICENSE) for details.
