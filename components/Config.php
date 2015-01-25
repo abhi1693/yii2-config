@@ -86,7 +86,7 @@ class Config extends Component implements IConfig
         if (!$this->_db instanceof Connection) {
             throw new Exception("Config.cacheId \"{$this->cacheId}\" is invalid.");
         }
-        
+
         parent::init();
     }
 
