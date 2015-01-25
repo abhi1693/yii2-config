@@ -1,0 +1,21 @@
+{
+    "name": "abhi1693/yii2-config",
+    "description": "Yii2 manage configuration from database",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"," config"],
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Abhimanyu Saharan",
+            "email": "abhimanyu@teamvulcans.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "abhi1693\\config\\": ""
+        }
+    }
+}
