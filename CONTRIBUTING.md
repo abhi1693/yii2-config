@@ -7,11 +7,11 @@ and effective for everyone involved.
 
 ## Reporting an issue
 
-1. Make sure you have the latest version of Yii2-User and see if the issue still exists.
+1. Make sure you have the latest version of Yii2-Config and see if the issue still exists.
 
 2. Search for similar issues. It's possible somebody has encountered this bug already.
 
-3. Provide information including: the version of PHP, Yii and Yii2-User, the type of
+3. Provide information including: the version of PHP, Yii and Yii2-Config, the type of
 operating system and Web server, browser type and version.
 
 4. Provide the error call stack if available. A screenshot to explain the issue is very welcome.
