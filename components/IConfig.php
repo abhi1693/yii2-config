@@ -41,7 +41,7 @@ interface IConfig
     public function delete($name);
 
     /**
-     * Delete everything
+     * Deletes everything
      *
      * @return mixed
      */
