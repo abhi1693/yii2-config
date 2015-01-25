@@ -29,7 +29,22 @@ $ php composer.phar update
 Step 2: Configure your application
 ----------------------------------
 
-Coming Soon
+```
+$config = [
+    ...
+    'components' => [
+        ...
+        'config' => [
+            'class'         => 'abhimanyu\config\components\Config', // Class (Required)
+            'db'            => 'db',                                 // Database Connection ID (Optional)
+            'tableName'     => '{{%config}}',                        // Table Name (Optioanl)
+            'cacheId'       => 'cache',                              // Cache Id. Defaults to NULL (Optional)
+            'cacheKey'      => 'config.cache',                       // Key identifying the cache value (Required only if cacheId is set)
+            'cacheDuration' => 100                                   // Cache Expiration time in seconds. 0 means never expire. Defaults to 0 (Optional)
+        ]
+    ]
+]
+```
 
 Step 3: Updating database schema
 --------------------------------
