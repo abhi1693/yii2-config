@@ -3,8 +3,6 @@ Yii2-Config
 
 Yii2-Config provides a web interface for advanced configuration control and includes following features:
 
-> **NOTE:** Module is not yet in alpha version. Use it on your own risk. Some features are missing. Anything can be changed at any time.
-
 ## Documentation
 
 [Installation instructions](docs/installation.md)
