@@ -10,6 +10,10 @@
             "email": "abhimanyu@teamvulcans.com"
         }
     ],
+    "support": {
+        "issues": "https://github.com/abhi1693/yii2-config/issues?state=open",
+        "source": "https://github.com/abhi1693/yii2-config/"
+    },
     "require": {
         "yiisoft/yii2": "*"
     },
