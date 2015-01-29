@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "abhi1693\\config\\": ""
+            "abhimanyu\\config\\": ""
         }
     }
 }
