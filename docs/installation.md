@@ -29,7 +29,7 @@ $ php composer.phar update
 Step 2: Configure your application
 ----------------------------------
 
-```
+```php
 $config = [
     ...
     'components' => [
