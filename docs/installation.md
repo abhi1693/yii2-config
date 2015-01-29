@@ -50,5 +50,5 @@ Step 3: Updating database schema
 --------------------------------
 
 ```
-yii migrate --migrationPath=@vendor/abhi1693/config/migrations
+yii migrate/up --migrationPath=@vendor/abhi1693/config/migrations
 ```
