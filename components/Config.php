@@ -212,9 +212,9 @@ class Config extends Component implements IConfig
             $value = $this->_merge($name, $value);
 
             if (array_key_exists($name, $this->getData()) === false) {
-                $this->_db->createCommand()->insert($this->tableName, ['name' => $name, 'value' => $value]);
+                $this->_db->createCommand()->insert($this->tableName, ['name' => $name, 'value' => $value])->execute();
             } else {
-                $this->_db->createCommand()->update($this->tableName, ['value' => $value], 'name = :name', [':name' => $name]);
+                $this->_db->createCommand()->update($this->tableName, ['value' => $value], 'name = :name', [':name' => $name])->execute();
             }
             $this->_data[$name] = $value;
         }
