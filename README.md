@@ -1,7 +1,7 @@
 Yii2-Config
 ===========
 
-[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.8475.svg)](http://dx.doi.org/10.5281/zenodo.8475)
+[![Latest Stable Version](https://poser.pugx.org/abhi1693/yii2-config/v/stable.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Total Downloads](https://poser.pugx.org/abhi1693/yii2-config/downloads.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Latest Unstable Version](https://poser.pugx.org/abhi1693/yii2-config/v/unstable.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![License](https://poser.pugx.org/abhi1693/yii2-config/license.svg)](https://packagist.org/packages/abhi1693/yii2-config)
 
 Yii2-Config provides a web interface for advanced configuration control and includes following features:
 
