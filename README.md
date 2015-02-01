@@ -12,9 +12,88 @@ Yii2-Config provides a web interface for advanced configuration control and incl
 
 ## Documentation
 
-[Installation instructions](docs/installation.md)
+Installation
+============
 
-[Usage](docs/basic_usage.md)
+This document will guide you through the process of installing Yii2-Config using **composer**. Installation is a quick and
+easy three-step process.
+
+> **NOTE:** Before we start make sure that you have properly configured **db** application component.
+
+
+Step 1: Download using composer
+-------------------------------
+
+Add Yii2-config to the require section of your **composer.json** file:
+
+```
+{
+    "require": {
+        "abhi1693/yii2-config": "1.0.0"
+    }
+}
+```
+
+And run following command to download extension using **composer**:
+
+```bash
+$ php composer.phar update
+```
+
+Step 2: Configure your application
+----------------------------------
+
+```php
+$config = [
+    ...
+    'components' => [
+        ...
+        'config' => [
+            'class'         => 'abhimanyu\config\components\Config', // Class (Required)
+            'db'            => 'db',                                 // Database Connection ID (Optional)
+            'tableName'     => '{{%config}}',                        // Table Name (Optioanl)
+            'cacheId'       => 'cache',                              // Cache Id. Defaults to NULL (Optional)
+            'cacheKey'      => 'config.cache',                       // Key identifying the cache value (Required only if cacheId is set)
+            'cacheDuration' => 100                                   // Cache Expiration time in seconds. 0 means never expire. Defaults to 0 (Optional)
+        ]
+    ]
+]
+```
+
+Step 3: Updating database schema
+--------------------------------
+
+```
+yii migrate/up --migrationPath=@vendor/abhi1693/yii2-config/migrations
+```
+
+
+Basic Usage
+===========
+
+Get
+---
+```
+Yii::$app->config->get('key1');
+Yii::$app->config->get('key2', 'default');
+Yii::$app->config->get(['key1' => 'value1']);
+```
+
+Set
+---
+```
+Yii::$app->config->set('key1', 'value1');
+Yii::$app->config->set('key1', ['value1', 'value2']);
+Yii::$app->config->set(['key1' => 'value1']);
+```
+
+Delete
+------
+```
+Yii::$app->config->delete('key1');
+Yii::$app->config->deleteAll(); // delete all config
+```
+
 
 [Change Logs](CHANGE.md)
 
