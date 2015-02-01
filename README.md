@@ -10,10 +10,10 @@ Yii2-Config provides a web interface for advanced configuration control and incl
 - Delete Value from DB
 - Delete All Values from DB
 
-## Documentation
+Documentation
+=============
 
-Installation
-============
+## Installation
 
 This document will guide you through the process of installing Yii2-Config using **composer**. Installation is a quick and
 easy three-step process.
@@ -63,17 +63,16 @@ $config = [
 Step 3: Updating database schema
 --------------------------------
 
-```
+```bash
 yii migrate/up --migrationPath=@vendor/abhi1693/yii2-config/migrations
 ```
 
 
-Basic Usage
-===========
+## Basic Usage
 
 Get
 ---
-```
+```php
 Yii::$app->config->get('key1');
 Yii::$app->config->get('key2', 'default');
 Yii::$app->config->get(['key1' => 'value1']);
@@ -81,7 +80,7 @@ Yii::$app->config->get(['key1' => 'value1']);
 
 Set
 ---
-```
+```php
 Yii::$app->config->set('key1', 'value1');
 Yii::$app->config->set('key1', ['value1', 'value2']);
 Yii::$app->config->set(['key1' => 'value1']);
@@ -89,13 +88,14 @@ Yii::$app->config->set(['key1' => 'value1']);
 
 Delete
 ------
-```
+```php
 Yii::$app->config->delete('key1');
 Yii::$app->config->deleteAll(); // delete all config
 ```
 
+## CHANGE LOGS
 
-[Change Logs](CHANGE.md)
+Refer to [Change Logs](CHANGE.md)
 
 #### How to contribute?
 
