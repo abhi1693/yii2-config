@@ -165,7 +165,7 @@ class Config extends Component implements IConfig
      */
     private function _get($name, $default = null)
     {
-        return array_key_exists($name, $this->getData()) ? Json::decode($this->getData()[$name]) : $default;
+        return array_key_exists($name, $this->getData()) ? $this->getData()[$name] : $default;
     }
 
     /**
