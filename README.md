@@ -1,6 +1,8 @@
 Yii2-Config
 ===========
 
+[![DOI](https://zenodo.org/badge/doi/10.5281/zenodo.8475.svg)](http://dx.doi.org/10.5281/zenodo.8475)
+
 Yii2-Config provides a web interface for advanced configuration control and includes following features:
 
 - Get Value from DB
@@ -13,6 +15,8 @@ Yii2-Config provides a web interface for advanced configuration control and incl
 [Installation instructions](docs/installation.md)
 
 [Usage](docs/basic_usage.md)
+
+[Change Logs](CHANGE.md)
 
 #### How to contribute?
 
