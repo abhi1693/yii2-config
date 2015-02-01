@@ -15,7 +15,7 @@ class m150125_135015_init_config extends Migration
         }
         $this->createTable($this->tableName, [
             'id' => Schema::TYPE_PK,
-            'key' => Schema::TYPE_STRING . ' UNIQUE',
+            'name' => Schema::TYPE_STRING . ' UNIQUE',
             'value' => Schema::TYPE_TEXT,
         ], $tableOptions);
     }
