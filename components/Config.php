@@ -120,7 +120,7 @@ class Config extends Component implements IConfig
      */
     private function _getDataFromDb()
     {
-        return ArrayHelper::map($this->_db->createCommand("SELECT key, value FROM {$this->tableName}")->queryAll(), 'key', 'value');
+        return ArrayHelper::map($this->_db->createCommand("SELECT name, value FROM {$this->tableName}")->queryAll(), 'name', 'value');
     }
 
     /**
@@ -205,16 +205,16 @@ class Config extends Component implements IConfig
                 $this->_data[$key] = $val;
             }
             if (count($insert) > 0) {
-                $this->_db->createCommand()->delete($this->tableName, ['IN', 'key', $delete])->execute();
-                $this->_db->createCommand()->batchInsert($this->tableName, ['key', 'value'], $insert)->execute();
+                $this->_db->createCommand()->delete($this->tableName, ['IN', 'name', $delete])->execute();
+                $this->_db->createCommand()->batchInsert($this->tableName, ['name', 'value'], $insert)->execute();
             }
         } else {
             $value = $this->_merge($name, $value);
 
             if (array_key_exists($name, $this->getData()) === false) {
-                $this->_db->createCommand()->insert($this->tableName, ['key' => $name, 'value' => $value]);
+                $this->_db->createCommand()->insert($this->tableName, ['name' => $name, 'value' => $value]);
             } else {
-                $this->_db->createCommand()->update($this->tableName, ['value' => $value], 'key = :key', [':key' => $name]);
+                $this->_db->createCommand()->update($this->tableName, ['value' => $value], 'name = :name', [':name' => $name]);
             }
             $this->_data[$name] = $value;
         }
@@ -249,7 +249,7 @@ class Config extends Component implements IConfig
     public function delete($name)
     {
         if (array_key_exists($name, $this->getData())) {
-            $this->_db->createCommand()->delete($this->tableName, 'key = :key', [':key' => $name]);
+            $this->_db->createCommand()->delete($this->tableName, 'name = :name', [':name' => $name]);
             unset($this->_data[$name]);
         }
 
