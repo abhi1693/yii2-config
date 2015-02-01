@@ -15,7 +15,7 @@ Add Yii2-config to the require section of your **composer.json** file:
 ```
 {
     "require": {
-        "abhi1693/yii2-config": "v1.0.0"
+        "abhi1693/yii2-config": "1.0.0"
     }
 }
 ```
