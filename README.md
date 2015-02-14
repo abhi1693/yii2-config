@@ -26,7 +26,7 @@ Step 1: Download using composer
 
 Add Yii2-config to the require section of your **composer.json** file:
 
-```
+```php
 {
     "require": {
         "abhi1693/yii2-config": "1.0.0"
