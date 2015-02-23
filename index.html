@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Yii2 Config by abhi1693</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Yii2 Config</h1>
+        <h2>Yii2 manage configuration from database</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/abhi1693/yii2-config/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/abhi1693/yii2-config/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/abhi1693/yii2-config" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="yii2-config" class="anchor" href="#yii2-config" aria-hidden="true"><span class="octicon octicon-link"></span></a>Yii2-Config</h1>
+
+<p>Yii2-Config provides a web interface for advanced configuration control and includes following features:</p>
+
+<ul>
+<li>Get Value from DB</li>
+<li>Set Value to DB</li>
+<li>Delete Value from DB</li>
+<li>Delete All Values from DB</li>
+</ul>
+
+<h1>
+<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Documentation</h1>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>This document will guide you through the process of installing Yii2-Config using <strong>composer</strong>. Installation is a quick and
+easy three-step process.</p>
+
+<blockquote>
+<p><strong>NOTE:</strong> Before we start make sure that you have properly configured <strong>db</strong> application component.</p>
+</blockquote>
+
+<h2>
+<a id="step-1-download-using-composer" class="anchor" href="#step-1-download-using-composer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Download using composer</h2>
+
+<p>Add Yii2-config to the require section of your <strong>composer.json</strong> file:</p>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2">{</span>
+<span class="pl-s2">    <span class="pl-s1"><span class="pl-pds">"</span>require<span class="pl-pds">"</span></span>: {</span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">"</span>abhi1693/yii2-config<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>1.0.0<span class="pl-pds">"</span></span></span>
+<span class="pl-s2">    }</span>
+<span class="pl-s2">}</span></pre></div>
+
+<p>And run following command to download extension using <strong>composer</strong>:</p>
+
+<div class="highlight highlight-bash"><pre>$ php composer.phar update</pre></div>
+
+<h2>
+<a id="step-2-configure-your-application" class="anchor" href="#step-2-configure-your-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 2: Configure your application</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-vo">$config</span> <span class="pl-k">=</span> [</span>
+<span class="pl-s2">    <span class="pl-k">...</span></span>
+<span class="pl-s2">    <span class="pl-s1"><span class="pl-pds">'</span>components<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s2">        <span class="pl-k">...</span></span>
+<span class="pl-s2">        <span class="pl-s1"><span class="pl-pds">'</span>config<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>class<span class="pl-pds">'</span></span>         <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>abhimanyu\config\components\Config<span class="pl-pds">'</span></span>, <span class="pl-c">// Class (Required)</span></span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>db<span class="pl-pds">'</span></span>            <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>db<span class="pl-pds">'</span></span>,                                 <span class="pl-c">// Database Connection ID (Optional)</span></span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>tableName<span class="pl-pds">'</span></span>     <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>{{%config}}<span class="pl-pds">'</span></span>,                        <span class="pl-c">// Table Name (Optioanl)</span></span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>cacheId<span class="pl-pds">'</span></span>       <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>cache<span class="pl-pds">'</span></span>,                              <span class="pl-c">// Cache Id. Defaults to NULL (Optional)</span></span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>cacheKey<span class="pl-pds">'</span></span>      <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>config.cache<span class="pl-pds">'</span></span>,                       <span class="pl-c">// Key identifying the cache value (Required only if cacheId is set)</span></span>
+<span class="pl-s2">            <span class="pl-s1"><span class="pl-pds">'</span>cacheDuration<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">100</span>                                   <span class="pl-c">// Cache Expiration time in seconds. 0 means never expire. Defaults to 0 (Optional)</span></span>
+<span class="pl-s2">        ]</span>
+<span class="pl-s2">    ]</span>
+<span class="pl-s2">]</span></pre></div>
+
+<h2>
+<a id="step-3-updating-database-schema" class="anchor" href="#step-3-updating-database-schema" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 3: Updating database schema</h2>
+
+<div class="highlight highlight-bash"><pre>yii migrate/up --migrationPath=@vendor/abhi1693/yii2-config/migrations</pre></div>
+
+<h2>
+<a id="basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<h2>
+<a id="get" class="anchor" href="#get" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>get(<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>get(<span class="pl-s1"><span class="pl-pds">'</span>key2<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>default<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>get([<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>value1<span class="pl-pds">'</span></span>]);</span></pre></div>
+
+<h2>
+<a id="set" class="anchor" href="#set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>set(<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>value1<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>set(<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span>, [<span class="pl-s1"><span class="pl-pds">'</span>value1<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>value2<span class="pl-pds">'</span></span>]);</span>
+<span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>set([<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-s1"><span class="pl-pds">'</span>value1<span class="pl-pds">'</span></span>]);</span></pre></div>
+
+<h2>
+<a id="delete" class="anchor" href="#delete" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete</h2>
+
+<div class="highlight highlight-php"><pre><span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>delete(<span class="pl-s1"><span class="pl-pds">'</span>key1<span class="pl-pds">'</span></span>);</span>
+<span class="pl-s2"><span class="pl-s3">Yii</span><span class="pl-k">::</span><span class="pl-vo">$app</span><span class="pl-k">-&gt;</span><span class="pl-vo">config</span><span class="pl-k">-&gt;</span>deleteAll(); <span class="pl-c">// delete all config</span></span></pre></div>
+
+<h2>
+<a id="change-logs" class="anchor" href="#change-logs" aria-hidden="true"><span class="octicon octicon-link"></span></a>CHANGE LOGS</h2>
+
+<p>Refer to <a href="CHANGE.md">Change Logs</a></p>
+
+<h4>
+<a id="how-to-contribute" class="anchor" href="#how-to-contribute" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to contribute?</h4>
+
+<p>Contributing instructions are located in <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> file.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Yii2-config is released under the MIT License. See the bundled <a href="LICENSE">LICENSE</a> for details.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
