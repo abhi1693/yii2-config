@@ -3,7 +3,7 @@ Yii2-Config
 
 [![Dependency Status](https://www.versioneye.com/user/projects/54e1e64c0a910b25de0001ad/badge.svg?style=flat)](https://www.versioneye.com/user/projects/54e1e64c0a910b25de0001ad)
 [![Code Climate](https://codeclimate.com/github/abhi1693/yii2-config/badges/gpa.svg)](https://codeclimate.com/github/abhi1693/yii2-config)
-[![Latest Stable Version](https://poser.pugx.org/abhi1693/yii2-config/v/stable.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Total Downloads](https://poser.pugx.org/abhi1693/yii2-config/downloads.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Latest Unstable Version](https://poser.pugx.org/abhi1693/yii2-config/v/unstable.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Documentation Status](https://readthedocs.org/projects/yii2-config/badge/?version=stable)](https://readthedocs.org/projects/yii2-config/?badge=stable)
+[![Latest Stable Version](https://poser.pugx.org/abhi1693/yii2-config/v/stable.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Total Downloads](https://poser.pugx.org/abhi1693/yii2-config/downloads.svg)](https://packagist.org/packages/abhi1693/yii2-config) [![Latest Unstable Version](https://poser.pugx.org/abhi1693/yii2-config/v/unstable.svg)](https://packagist.org/packages/abhi1693/yii2-config)
 
 Yii2-Config provides a web interface for advanced configuration control and includes following features:
 
