@@ -249,7 +249,7 @@ class Config extends Component implements IConfig
     public function delete($name)
     {
         if (array_key_exists($name, $this->getData())) {
-            $this->_db->createCommand()->delete($this->tableName, 'name = :name', [':name' => $name]);
+            $this->_db->createCommand()->delete($this->tableName, 'name = :name', [':name' => $name])->execute();
             unset($this->_data[$name]);
         }
 
@@ -263,7 +263,7 @@ class Config extends Component implements IConfig
      */
     public function deleteAll()
     {
-        $this->_db->createCommand()->delete($this->tableName);
+        $this->_db->createCommand()->truncateTable($this->tableName)->execute();
         $this->_data = [];
 
         $this->_cache->delete($this->cacheKey);
