@@ -90,6 +90,14 @@ class Config extends Component implements IConfig
         parent::init();
     }
 
+    public function referer()
+    {
+        $this->_data = null;
+        // 实际使用时，其他地方正常使用set方法后，缓存文件其实已经变更了，所以这一步正常情况下不需要。此处强调一下。
+        // $this->_cache->delete($this->cacheKey);
+        $this->getData();
+    }
+
     /**
      * Get data
      * @return array
