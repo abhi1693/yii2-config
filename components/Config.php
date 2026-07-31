@@ -77,14 +77,14 @@ class Config extends Component implements IConfig
         if ($this->cacheId !== null) {
             $this->_cache = Yii::$app->get($this->cacheId);
             if (!$this->_cache instanceof Cache) {
-                throw new Exception("Config.db \"{$this->db}\" is invalid.");
+                throw new Exception("Config.cacheId \"{$this->cacheId}\" is invalid.");
             }
         }
 
         // Get the db component
         $this->_db = Yii::$app->get($this->db);
         if (!$this->_db instanceof Connection) {
-            throw new Exception("Config.cacheId \"{$this->cacheId}\" is invalid.");
+            throw new Exception("Config.db \"{$this->db}\" is invalid.");
         }
 
         parent::init();
@@ -266,6 +266,9 @@ class Config extends Component implements IConfig
         $this->_db->createCommand()->truncateTable($this->tableName)->execute();
         $this->_data = [];
 
-        $this->_cache->delete($this->cacheKey);
+        if ($this->_cache !== null) {
+            $this->_cache->delete($this->cacheKey);
+        }
+
     }
 }
